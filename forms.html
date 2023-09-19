@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Animasi Video dengan Input</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+        }
+
+        .input-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .input-container input {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .input-container button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Hamburger menu toggle */
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        /* Rotasi garis menjadi ikon "X" saat menu terbuka */
+        .menu-toggle.open .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 5px);
+        }
+
+        .menu-toggle.open .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -5px);
+        }
+
+        /* Menu kontainer */
+        .menu-container {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: #333;
+            overflow-y: scroll;
+            transition: 0.4s;
+            z-index: 1;
+        }
+
+        .menu {
+            padding: 0;
+            list-style: none;
+            margin-top: 50px;
+        }
+
+        .menu li {
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Ganti warna menu saat kursor diarahkan */
+        .menu li:hover {
+            background-color: #007bff;
+        }
+
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Tampilkan menu saat hamburger menu diklik */
+        .menu-toggle.open+.menu-container {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <div class="video-container">
+        <video id="animationVideo" preload="auto" playsinline loop muted>
+            <source src="https://media.istockphoto.com/id/1476889453/id/video/air-terjun-di-hutan-thailand.mp4?s=mp4-640x640-is&k=20&c=egVwk-iimPekNILMB5HNAugmtUSibghrJOcrVCKQJ2Q=" type="video/mp4">
+        </video>
+        <div class="input-container">
+            <h1>Registrasi</h1>
+            <input type="text" placeholder="ID harus terdiri dari 5-16 karakter." required>
+            <input type="password" placeholder="Password harus terdiri dari 8-16 karakter." required>
+            <input type="password" placeholder="Konfirmasi Password" required>
+            <input type="email" placeholder="Masukkan email dengan benar." required>
+            <label for="agree">
+                <input type="checkbox" id="agree" required>
+                Setuju untuk menerima email yang berisikan informasi event.
+            </label>
+            <button onclick="register()">REGISTER</button>
+            <button onclick="loginWithGoogle()">Login with Google</button>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <ul class="menu">
+            <ul class="menu">
+                <li><a href="menu1.html">Menu 1</a></li>
+                <li><a href="menu2.html">Menu 2</a></li>
+                <li><a href="menu3.html">Menu 3</a></li>
+                <li><a href="menu4.html">Menu 4</a></li>
+                <!-- Tambahkan lebih banyak menu sesuai kebutuhan -->
+            </ul>
+            
+        </ul>
+    </div>
+
+    <script>
+        const animationVideo = document.getElementById('animationVideo');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuContainer = document.querySelector('.menu-container');
+
+        // Memainkan animasi video secara otomatis
+        animationVideo.play();
+
+        function register() {
+            // Implementasi pendaftaran di sini
+            // Anda dapat mengirimkan data pendaftaran ke server atau melakukan tindakan lain sesuai kebutuhan.
+        }
+
+        function loginWithGoogle() {
+            // Implementasi login dengan Google di sini
+            // Anda dapat menggunakan Firebase Authentication atau OAuth2 untuk menghubungkan dengan layanan Google.
+            // Contoh:
+            // window.location.href = 'URL_Login_Google';
+        }
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('open');
+            menuContainer.style.right = menuToggle.classList.contains('open') ? '0' : '-300px';
+        });
+    </script>
+</body>
+
+</html>

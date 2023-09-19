@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title>learning html forms</title>
+    <style>
+        .password-container {
+            position: relative;
+        }
+        #password {
+            padding-right: 30px; /* Menyisipkan ruang untuk icon */
+        }
+        .show-password-icon {
+   
+            position: absolute;
+            top: 5%;
+            right: 1205px;
+            transform: translateY(0%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Registation form</h1>
+    <form action="process.php">
+        <fieldset>
+        <legend>personal data:</legend>
+        <!--method="POST"(HIDE YOUR DATA ON URL)-->
+        <!--method="GET"(SHOW YOUR DATA ON URL)-->
+        <!--input type text-->
+        <label for="fname">fisrt name: </label><br>
+        <input type="text" id="fname" name="fname" required><br>
+        <label for="lname">last name :</label><br>
+        <input type="text" id="lname" name="lname"><br><br><br>
+        <label for="button">button</label><br>
+        <input type="button" value="Klik "><br>
+        <label for="checkbox">checkbox</label><br>
+        <input type="checkbox" name="nama_checkbox" value="nilai_checkbox"><br>
+        <label for="color">color</label><br>
+        <input type="color" name="nama_warna"><br>
+        <label for="date">date</label><br>
+        <input type="date" name="nama_tanggal"><br>
+        <label for="date-time">date-time</label><br>
+        <input type="date-time" name="date-time"><br>
+        <label for="email">email</label><br>
+        <input type="email" name="email" required><br>
+        <label for="file">file</label><br>
+        <input type="file" name="nama_file"><br>
+        <input type="hidden" name="nama_tersembunyi" value="nilai_tersembunyi"><br>
+        <input type="image" src="images/unai-home-banner_home-with-a-beautiful-campus.jpg" width="600" height="347" alt="Gambar"><br>
+        <label for="month">month</label><br>
+        <input type="month" name="nama_bulan"><br>
+        <label for="number">number</label><br>
+        <input type="number" name="nama_angka" min="1" max="100"><br>
+        <label for="password">password</label><br>
+        <input type="password" name="nama_sandi"><br>
+        <label for="radio">gender</label><br>
+        <input type="radio" name="jenis_kelamin" value="male"> Laki-laki
+        <input type="radio" name="jenis_kelamin" value="female"> Perempuan<br>
+        <label for="range">range</label><br>
+        <input type="range" name="rentang" min="0" max="100" step="1"><br>
+        <label for="reset">reset</label><br>
+        <input type="reset" value="Reset Form"><br>
+        <label for="search">search</label><br>
+        <input type="search" name="pencarian" placeholder="Cari sesuatu..."><br>
+        <label for="submit">submit</label><br>
+        <input type="submit" value="Kirim"><br>
+        <label for="tel">NO.telepon</label><br>
+        <input type="tel" name="nomor_telepon"><br>
+        <label for="text">text</label><br>
+        <input type="text" name="teks"><br>
+        <label for="time">time</label><br>
+        <input type="time" name="waktu"><br>
+        <label for="url">url</label><br>
+        <input type="url" name="url" placeholder="https://www.example.com"><br>
+        <label for="week">week</label><br>
+        <input type="week" name="minggu"><br>
+
+
+        
+        <!--input type radio-->
+        <p>choose your gender :</p>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">female</label>
+
+
+        <br>
+        <!--input type password-->
+        <div class="password-container">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <span class="show-password-icon" onclick="myFunction()">
+                <!-- Ganti src dengan path ke gambar icon yang Anda inginkan -->
+                <img src="images/icon_eye_rd.png" alt="Show Password">
+            </span>
+        </div>
+
+        <br>
+
+        <script>
+        function myFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+              x.type = "text";
+            } else {
+              x.type = "password";
+            }
+          }
+
+        </script>
+
+        <!--select element-->
+        <label for="relegion">choose your relegion</label>
+        <select id="relegion" name="relegion">
+            <option value="christian">christian</option>
+            <option value="moslem">moslem</option>
+            <option value="budhist">budhist</option>
+            <option value="hindu">hindu</option>
+
+            <br><br>
+
+        </select>
+
+        <br><br>
+
+        <!--textarea element-->
+        <label for="coment">write your comment below :</label><br>
+        <textarea name="coment" rows="10" cols="30"></textarea>
+        <br>
+        <!--input type checkbox-->
+
+        <p>choose your hobbies :</p>
+        <input type="checkbox" id="hobby1" value="badminton">
+        <label for="hobby1">badminton</label><br>
+        <input type="checkbox" id="hobbies2" name="hobbies2" value="futsal">
+        <label for="hobbies2">futsal</label><br>
+        <input type="checkbox" id="hobby3" value="football">
+        <label for="hobby3">football</label><br>
+        <input type="checkbox" id="hobby4" value="Basketball">
+        <label for="hobby4">Basketball</label>
+
+        <br><br>
+
+
+        <!--input type submit-->
+        <input type="submit">
+
+        <!--input type resert-->
+        <input type="reset>">
+
+    </fieldset>
+    </form>
+</body>
+
+</html>

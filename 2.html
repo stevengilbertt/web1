@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Password</title>
+    <style>
+        .password-container {
+            position: relative;
+        }
+        #password {
+            padding-right: 30px; /* Menyisipkan ruang untuk icon */
+        }
+        .show-password-icon {
+   
+            position: absolute;
+            top: 5%;
+            right: 1259px;
+            transform: translateY(0%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="password-container">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <span class="show-password-icon" onclick="myFunction()">
+            <!-- Ganti src dengan path ke gambar icon yang Anda inginkan -->
+            <img src="images/icon_eye_rd.png" alt="Show Password">
+        </span>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
